@@ -1,25 +1,25 @@
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import TrackIt from '../assets/img/TrackIt.png';
 import UserContext from '../context/UserContext';
 
 export default function Header() {
     const user = useContext(UserContext);
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     if (user === undefined) {
-        history.push('/');
+        navigate('/');
     }
 
     return (
         <Top>
             <div className="container">
+                <Link to="/">
+                    <img src={TrackIt} key="logo" />
+                </Link>
                 <div>
-                    <img src={TrackIt} />
-                </div>
-                <div>
-                    <img className="user-image" src={user.image} />
+                    <img className="user-image" src={user.image} key="user" />
                 </div>
             </div>
         </Top>

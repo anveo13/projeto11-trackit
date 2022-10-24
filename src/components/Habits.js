@@ -66,7 +66,7 @@ export default function Habits() {
     }
 
     function deletConfirmation(habit) {
-        if (habit != undefined) {
+        if (habit !== undefined) {
             setDeletedHabit(habit);
         }
         if (bool) {
@@ -236,6 +236,11 @@ const Container = styled.div`
         width: 90%;
         color: #666666;
         font-size: 18px;
+        font-family: 'Lexend Deca';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22.976px;
+        line-height: 29px;
     }
 
     .trash {

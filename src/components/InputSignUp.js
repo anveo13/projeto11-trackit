@@ -84,7 +84,7 @@ export default function InputSignUp() {
                         register();
                     }}
                 >
-                    entrar
+                    Entrar
                 </button>
             </Inputs>
         </form>

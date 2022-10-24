@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useState} from 'react';
 import axios from 'axios';
-
+import { ThreeDots } from 'react-loader-spinner'
 
 export default function InputLogin({ setUser }) {
     const [email, setEmail] = useState('');
@@ -29,7 +29,7 @@ export default function InputLogin({ setUser }) {
 
         promise.then((response) => {
             setUser(response.data);
-            navigate('./habitos');
+            navigate('./hoje');
         });
 
         promise.catch(() => {
@@ -68,8 +68,17 @@ export default function InputLogin({ setUser }) {
                     }}
                 >
                     {!disableButton ? (
-                        'entrar'
-                    ) : ""}
+                        'Entrar'
+                    ) : <ThreeDots 
+                    height="80" 
+                    width="80" 
+                    radius="9"
+                    color="#FFFFFF" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                     />}
                 </button>
             </Inputs>
         </form>

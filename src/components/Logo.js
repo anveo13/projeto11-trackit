@@ -4,7 +4,7 @@ import logo from '../assets/img/Logo.png'
 export default function Logo() {
     return (
         <ContainerImage>
-            <img src={logo}/>
+            <img src={logo} />
         </ContainerImage>
     );
 }

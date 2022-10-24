@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { useContext, useState } from 'react';
 import UserContext from '../context/UserContext';
-/* import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import Loader from 'react-loader-spinner'; */
+import { ThreeDots } from 'react-loader-spinner';
 
 let habitDays = [];
 
@@ -105,7 +104,16 @@ export default function CreateHabit({ addHabit, getHabits }) {
                     {!isDisable ? (
                         'Salvar'
                     ) : (
-                        {/* <Loader type="ThreeDots" color="white"></Loader> */}
+                        <ThreeDots 
+                    height="80" 
+                    width="80" 
+                    radius="9"
+                    color="#FFFFFF" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                     />
                     )}
                 </Save>
             </Buttons>
