@@ -8,7 +8,7 @@ export default function InputLogin({ setUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [disableButton, setDisableButton] = useState(false);
-    let history = useNavigate();
+    const navigate = useNavigate();
 
     function disable() {
         setDisableButton(true);
@@ -29,7 +29,7 @@ export default function InputLogin({ setUser }) {
 
         promise.then((response) => {
             setUser(response.data);
-            history.push('./habitos');
+            navigate('./habitos');
         });
 
         promise.catch(() => {
